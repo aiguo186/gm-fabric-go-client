@@ -13,45 +13,11 @@ import (
 	"github.com/pkg/errors"
 	"github.com/hyperledger/fabric-protos-go/msp"
 	"github.com/hyperledger/fabric-protos-go/peer"
-	//"github.com/tidwall/gjson"
 )
 
 const (
 	ChannelID = "mychannel"
 )
-type txInfo struct {
-	TxID      string
-	Creator   string
-	Timestamp int64
-	Key       string
-	Content   []content
-}
-
-type value struct {
-	ID                string `json:"id"`
-	SerialNumber      string `json:"serial_number"`
-	OriginFileHash    string `json:"origin_file_hash"`
-	AttestationHash   string `json:"attestation_hash"`
-	Status            string `json:"status"`
-	CreatedAt         string `json:"created_at"`
-	DataJSON          string `json:"data_json"`
-	AttestationTypeID string `json:"attestation_type_id"`
-	TemplateID        string `json:"template_id"`
-	OrganizationID    string `json:"organization_id"`
-	OrganizationName  string `json:"organization_name"`
-	BusinessType      string `json:"business_type"`
-	CollectionType    string `json:"collection_type"`
-	Tableinfo         string `json:"tableinfo"`
-}
-
-type content struct {
-	HashAlgo string `json:"hash_algo"`
-	Hash     string `json:"hash"`
-	URI      string `json:"uri"`
-	Meta     string `json:"meta"`
-}
-
-
 
 func main() {
 	sdk, err := fabsdk.New(config.FromFile("./config.yaml"))
